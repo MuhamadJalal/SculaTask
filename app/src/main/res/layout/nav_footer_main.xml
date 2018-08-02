@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/footerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/basicAppColor"
+        android:clickable="false"
+        android:fontFamily="monospace"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:text="@string/menu_dashboard"
+        android:textColor="@android:color/white"
+        android:textSize="20sp" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="@dimen/nav_footer_margin"
+        android:background="@android:color/white"
+        android:orientation="horizontal"
+        android:baselineAligned="false">
+
+        <LinearLayout
+            android:id="@+id/footerMySchool"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/vertical_border"
+            android:orientation="vertical"
+            android:paddingEnd="8dp"
+            android:paddingStart="8dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/footer_image_height"
+                android:contentDescription="@string/footer_my_school"
+                android:src="@drawable/school_building" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/footer_my_school"
+                android:textColor="@color/basicAppColor"
+                android:textSize="@dimen/footer_text_size" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/footerAddSchool"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/vertical_border"
+            android:orientation="vertical"
+            android:paddingEnd="5dp"
+            android:paddingStart="5dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/footer_image_height"
+                android:contentDescription="@string/footer_add_school"
+                android:src="@drawable/pin" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/footer_add_school"
+                android:textColor="@color/basicAppColor"
+                android:textSize="@dimen/footer_text_size" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/footerHowToUse"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/white"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/footer_image_height"
+                android:contentDescription="@string/footer_usage"
+                android:src="@drawable/scula" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/footer_usage"
+                android:textColor="@color/basicAppColor"
+                android:textSize="@dimen/footer_text_size" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/footerLogout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/basicAppColor"
+        android:baselineAligned="false"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="4dp">
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginEnd="@dimen/nav_footer_margin"
+            android:contentDescription="@string/footer_usage"
+            android:src="@drawable/ic_menu_logout" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/log_out"
+            android:textColor="#fff"
+            android:textSize="@dimen/footer_text_size" />
+    </LinearLayout>
+
+</LinearLayout>

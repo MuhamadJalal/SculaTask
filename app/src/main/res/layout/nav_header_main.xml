@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/nav_header_height"
+    android:id="@+id/navHeaderMain"
+    android:background="@color/basicAppColor"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+    <ImageView
+        android:id="@+id/navigateBack"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="8dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/nav_header_desc"
+        android:paddingTop="@dimen/nav_header_vertical_spacing"
+        android:src="@drawable/ic_menu_back" />
+
+    <LinearLayout
+        android:id="@+id/linearLayoutUserIMG"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@id/navigateBack"
+        android:orientation="horizontal"
+        tools:ignore="UseCompoundDrawables">
+
+        <ImageView
+            android:id="@+id/userImageView"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:contentDescription="@string/nav_header_desc"
+            app:srcCompat="@drawable/ic_menu_user" />
+
+        <TextView
+            android:id="@+id/userNameID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/user_name"
+            android:textSize="24sp"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="10dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/testNotExistMsg"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:layout_alignBottom="@+id/linearLayoutUserIMG"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="108dp">
+        <RelativeLayout
+            android:id="@+id/firstIncomingMessageNotifier"
+            android:layout_width="45dp"
+            android:layout_height="40dp">
+
+            <ImageView
+                android:id="@+id/firstSenderUserIcon"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentStart="true"
+                android:layout_gravity="bottom"
+                android:contentDescription="@string/menu_inbox"
+                android:src="@drawable/ic_menu_user" />
+
+            <TextView
+                android:id="@+id/firstNotifyBadge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12"
+                android:textSize="10sp"
+                android:layout_alignBottom="@+id/firstSenderUserIcon"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:background="@android:drawable/ic_notification_overlay" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/secondIncomingMessageNotifier"
+            android:layout_width="45dp"
+            android:layout_gravity="start"
+            android:layout_height="40dp">
+            <ImageView
+                android:id="@+id/secondSenderUserIcon"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentStart="true"
+                android:layout_gravity="bottom"
+                android:contentDescription="@string/menu_inbox"
+                android:src="@drawable/ic_menu_user"/>
+
+            <TextView
+                android:id="@+id/secondNotifyBadge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12"
+                android:textSize="10sp"
+                android:layout_alignBottom="@+id/secondSenderUserIcon"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:background="@android:drawable/ic_notification_overlay" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <!--setting border for the header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:background="@drawable/action_bar_border"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</RelativeLayout>

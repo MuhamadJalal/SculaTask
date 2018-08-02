@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@android:style/MediaButton.Rew"
+    android:id="@+id/iconNotificationLayout"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:orientation="vertical"
+    android:layout_gravity="center_vertical|end"
+    android:gravity="center_vertical"
+    android:focusable="true">
+
+    <TextView
+        android:id="@+id/iconNotificationText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/ic_notification_overlay"
+        android:backgroundTint="@android:color/holo_orange_light"
+        style="@android:style/MediaButton"
+        android:layout_gravity="center"
+        android:text="1"
+        android:textSize="10sp"
+        android:textColor="@android:color/white"
+        android:gravity="center"/>
+</LinearLayout>

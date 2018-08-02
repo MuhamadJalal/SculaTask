@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">Scula Task</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="title_activity_event_list">Event List</string>
+
+    <string name="user_name">User Name</string>
+    <string name="menu_inbox">Inbox</string>
+    <string name="home">Home</string>
+    <string name="my_profile">My Profile</string>
+    <string name="events">Events</string>
+    <string name="favorites">Favorites</string>
+    <string name="contact_us">Contact us</string>
+    <string name="feed_back">Feed back</string>
+    <string name="setting">Setting</string>
+    <string name="menu_dashboard">DASHBOARD</string>
+    <string name="footer_my_school">My School \n</string>
+    <string name="footer_add_school">Add School</string>
+    <string name="footer_usage">How to use Application</string>
+    <string name="log_out">Log out</string>
+
+    <string name="confirm_no">NO</string>
+    <string name="confirm_yes">Yes!</string>
+    <string name="confirm_delete">Delete the Event!</string>
+
+    <string name="new_event">New Event!</string>
+    <string name="title">Title:</string>
+    <string name="hint_title">Title</string>
+    <string name="description">Description:</string>
+    <string name="event_description">Event Description</string>
+    <string name="added_date">Added Date</string>
+    <string name="save_event">Save Event!</string>
+    <string name="preview">Prototype version performing task on Sidebar. \n
+        which showing a Toast in most of its event listener. \n It was a good challenge for me, \n
+        THANKS! \n
+        Please click EVENTS Button below to show Event List if it exist! \n
+        If not please click plus sign at the bottom to add an event!</string>
+
+</resources>
