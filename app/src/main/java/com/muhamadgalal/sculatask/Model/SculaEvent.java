@@ -2,9 +2,9 @@ package com.muhamadgalal.sculatask.Model;
 
 import java.io.Serializable;
 
-public class SculaEvent implements Serializable{
+public class SculaEvent implements Serializable {
 
-    private final static long serializable =10l;
+    private final static long serializable = 10l;
     private String title;
     private String description;
     private String eventAddedSince;

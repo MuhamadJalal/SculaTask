@@ -22,12 +22,12 @@
 
         <Button
             android:id="@+id/addEventBtn"
+            style="?android:attr/buttonTintMode"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
             android:background="@android:drawable/ic_menu_add"
-            android:backgroundTint="@android:color/holo_orange_light"
-            style="?android:attr/buttonTintMode"/>
+            android:backgroundTint="@android:color/holo_orange_light" />
     </android.support.design.widget.BottomNavigationView>
 
 

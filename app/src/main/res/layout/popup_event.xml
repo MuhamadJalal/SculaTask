@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="10dp">
@@ -10,38 +9,38 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
+        android:layout_marginBottom="25dp"
         android:text="@string/new_event"
-        android:textSize="20sp"
-        android:textStyle="bold"
         android:textColor="@color/basicAppColor"
-        android:layout_marginBottom="25dp"/>
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/popupTitle"
-        android:layout_below="@id/newEventTextView"
         style="@style/TextAppearance"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/newEventTextView"
         android:hint="@string/hint_title"
-        android:inputType="text"/>
+        android:inputType="text" />
 
     <EditText
         android:id="@+id/popupDescription"
-        android:layout_below="@id/popupTitle"
         style="@style/TextAppearance"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/popupTitle"
         android:hint="@string/event_description"
         android:inputType="textMultiLine" />
 
     <Button
         android:id="@+id/popupButton"
-        android:layout_below="@id/popupDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/popupDescription"
+        android:layout_marginTop="8dp"
+        android:background="@color/basicAppColor"
         android:text="@string/save_event"
         android:textColor="@android:color/holo_orange_light"
-        android:textSize="18sp"
-        android:background="@color/basicAppColor"
-        android:layout_marginTop="8dp"/>
+        android:textSize="18sp" />
 </RelativeLayout>

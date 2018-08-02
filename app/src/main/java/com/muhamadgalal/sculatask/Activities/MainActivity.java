@@ -1,32 +1,34 @@
 package com.muhamadgalal.sculatask.Activities;
 
-import com.muhamadgalal.sculatask.R;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.design.widget.Snackbar;
-import android.support.v7.app.AlertDialog;
-import android.text.method.ScrollingMovementMethod;
-import android.view.LayoutInflater;
-import android.view.View;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.method.ScrollingMovementMethod;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.muhamadgalal.sculatask.Data.DatabaseHandler;
 import com.muhamadgalal.sculatask.Model.SculaEvent;
+import com.muhamadgalal.sculatask.R;
 import com.muhamadgalal.sculatask.Utils.CustomNavigationHandler;
 import com.muhamadgalal.sculatask.Utils.DrawerItemEventListener;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
+    public TextView remTextIconCount;
+    public int reminderCount = 10;
     private DatabaseHandler database;
     private Button previewBtn;
     private Button addEventBtn;
@@ -34,8 +36,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private AlertDialog dialog;
     private TextView eventTitle;
     private TextView eventDescription;
-    public TextView remTextIconCount;
-    public int reminderCount = 10;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,7 +54,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         database = new DatabaseHandler(this);
 
         // set scalability to TextView
-        ((TextView) findViewById(R.id.previewTextView)).setMovementMethod(new ScrollingMovementMethod());;
+        ((TextView) findViewById(R.id.previewTextView)).setMovementMethod(new ScrollingMovementMethod());
+        ;
         // Navigate Back to Event list
         previewBtn = (Button) findViewById(R.id.previewBtn);
         previewBtn.setOnClickListener(this);
@@ -64,9 +65,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         addEventBtn.setOnClickListener(this);
 
         /**
-        // passing activity if there is any events
-        bypassActivity();
-        **/
+         // passing activity if there is any events
+         bypassActivity();
+         **/
         // Handle event listener for the upper Navigation view
         new CustomNavigationHandler(MainActivity.this, (View) findViewById(R.id.drawer_layout), drawerLayout);
         // handle navHeader notification icons
@@ -136,6 +137,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             super.onBackPressed();
         }
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -193,7 +195,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        switch (id){
+        switch (id) {
             case R.id.userActionBar:
                 Toast.makeText(this, "userActionBar", Toast.LENGTH_SHORT).show();
                 break;

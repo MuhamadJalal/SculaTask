@@ -29,7 +29,7 @@ public class DrawerItemEventListener extends Activity implements View.OnClickLis
     private LinearLayout howTOUseApp;
     private LinearLayout logoutLayout;
 
-    public void HeaderItemEventListener(Context context , NavigationView navigationView) {
+    public void HeaderItemEventListener(Context context, NavigationView navigationView) {
         this.context = context;
 
         navigateBackArrow = (ImageView) navigationView.getHeaderView(0).findViewById(R.id.navigateBack);
@@ -49,13 +49,13 @@ public class DrawerItemEventListener extends Activity implements View.OnClickLis
 
     }
 
-    public void FooterItemEventListener(Context context , View view){
+    public void FooterItemEventListener(Context context, View view) {
         this.context = context;
 
         mySchool = (LinearLayout) view.findViewById(R.id.footerMySchool);
         mySchool.setOnClickListener(this);
 
-        addSchool =(LinearLayout) view.findViewById(R.id.footerAddSchool);
+        addSchool = (LinearLayout) view.findViewById(R.id.footerAddSchool);
         addSchool.setOnClickListener(this);
 
         howTOUseApp = (LinearLayout) view.findViewById(R.id.footerHowToUse);
@@ -67,7 +67,7 @@ public class DrawerItemEventListener extends Activity implements View.OnClickLis
 
 
     // Handle the changes of users notification
-    public void changeUserNotification(Context context , View drawerLayout , Integer firstGistImage , Integer firstGistMsgCount , Integer secondGistImage , Integer secondGistMsgCount ) {
+    public void changeUserNotification(Context context, View drawerLayout, Integer firstGistImage, Integer firstGistMsgCount, Integer secondGistImage, Integer secondGistMsgCount) {
 
         NavigationView navigationView = (NavigationView) drawerLayout.findViewById(R.id.upper_nav_view);
 
@@ -87,15 +87,15 @@ public class DrawerItemEventListener extends Activity implements View.OnClickLis
          * is to invoke them from the server (ex: FireBase)
          *
          */
-        if (firstGistMsgCount != null){
+        if (firstGistMsgCount != null) {
             firstNotifyBadge.setText(String.valueOf(firstGistMsgCount));
 
-            if (firstGistImage != null){
+            if (firstGistImage != null) {
                 firstGist.setImageResource(firstGistImage);
-            }else {
+            } else {
                 firstGist.setImageResource(R.drawable.ic_menu_user);
             }
-        }else {
+        } else {
             // there no msg
             headerLayout.findViewById(R.id.firstIncomingMessageNotifier).setVisibility(View.INVISIBLE);
 
@@ -110,15 +110,15 @@ public class DrawerItemEventListener extends Activity implements View.OnClickLis
         }
 
         // showing notifications
-        if (secondGistMsgCount != null){
+        if (secondGistMsgCount != null) {
             secondNotifyBadge.setText(String.valueOf(secondGistMsgCount));
 
-            if (secondGistImage != null){
+            if (secondGistImage != null) {
                 secondGist.setImageResource(secondGistImage);
-            }else {
+            } else {
                 firstGist.setImageResource(R.drawable.ic_menu_user);
             }
-        }else {
+        } else {
 
             headerLayout.findViewById(R.id.secondIncomingMessageNotifier).setVisibility(View.INVISIBLE);
         }
@@ -127,12 +127,12 @@ public class DrawerItemEventListener extends Activity implements View.OnClickLis
     @Override
     public void onClick(View v) {
         int id = v.getId();
-        switch (id){
-            case R.id.navigateBack :
+        switch (id) {
+            case R.id.navigateBack:
                 Toast.makeText(context, "Navigate Back", Toast.LENGTH_LONG).show();
                 break;
 
-            case R.id.userImageView :
+            case R.id.userImageView:
                 Toast.makeText(context, "User Image", Toast.LENGTH_LONG).show();
                 break;
 

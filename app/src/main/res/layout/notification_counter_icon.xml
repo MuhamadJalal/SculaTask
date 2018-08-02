@@ -3,22 +3,22 @@
     style="@android:style/MediaButton.Rew"
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
-    android:clickable="true"
-    android:orientation="vertical"
     android:layout_gravity="center_vertical|end"
+    android:clickable="true"
+    android:focusable="true"
     android:gravity="center_vertical"
-    android:focusable="true">
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/iconNotificationText"
+        style="@android:style/MediaButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:background="@android:drawable/ic_notification_overlay"
         android:backgroundTint="@android:color/holo_orange_light"
-        style="@android:style/MediaButton"
-        android:layout_gravity="center"
+        android:gravity="center"
         android:text="1"
-        android:textSize="10sp"
         android:textColor="@android:color/white"
-        android:gravity="center"/>
+        android:textSize="10sp" />
 </LinearLayout>

@@ -1,48 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
 
     android:background="@color/basicAppColor">
 
     <TextView
         android:id="@+id/confirmTitle"
-        android:text="@string/confirm_delete"
-        android:textSize="24sp"
-        android:textColor="@android:color/holo_orange_light"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="15dp"
         android:gravity="center"
-        android:layout_margin="15dp" />
+        android:text="@string/confirm_delete"
+        android:textColor="@android:color/holo_orange_light"
+        android:textSize="24sp" />
 
     <TableRow
-        android:orientation="horizontal"
+        style="?android:attr/buttonBarStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/confirmTitle"
-        style="?android:attr/buttonBarStyle">
+        android:orientation="horizontal">
 
         <Button
             android:id="@+id/confirmNoBtn"
+            style="?android:attr/buttonBarButtonStyle"
             android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_margin="15dp"
             android:layout_height="wrap_content"
-            android:text="@string/confirm_no"
-            android:textSize="20sp"
-            android:textColor="@android:color/white"
+            android:layout_margin="15dp"
+            android:layout_weight="1"
             android:background="@android:color/holo_red_dark"
-            style="?android:attr/buttonBarButtonStyle"/>
+            android:text="@string/confirm_no"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+
         <Button
             android:id="@+id/confirmYesBtn"
+            style="?android:attr/buttonBarButtonStyle"
             android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_margin="15dp"
             android:layout_height="wrap_content"
-            android:text="@string/confirm_yes"
-            android:textSize="20sp"
-            android:textColor="@android:color/white"
+            android:layout_margin="15dp"
+            android:layout_weight="1"
             android:background="@android:color/holo_green_dark"
-            style="?android:attr/buttonBarButtonStyle" />
+            android:text="@string/confirm_yes"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
     </TableRow>
 </RelativeLayout>

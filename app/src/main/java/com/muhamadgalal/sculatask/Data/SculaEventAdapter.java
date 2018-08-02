@@ -31,9 +31,9 @@ public class SculaEventAdapter extends RecyclerView.Adapter<SculaEventAdapter.Vi
     @NonNull
     @Override
     public SculaEventAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.event_model ,parent ,false);
+        View view = LayoutInflater.from(context).inflate(R.layout.event_model, parent, false);
 
-        return new ViewHolder(context , view);
+        return new ViewHolder(context, view);
     }
 
     @Override
@@ -51,7 +51,7 @@ public class SculaEventAdapter extends RecyclerView.Adapter<SculaEventAdapter.Vi
         return sculaEventList.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         private TextView eventTitle;
         private TextView eventDescription;
@@ -64,10 +64,10 @@ public class SculaEventAdapter extends RecyclerView.Adapter<SculaEventAdapter.Vi
             context = con;
 
             eventTitle = (TextView) itemView.findViewById(R.id.titleTextView);
-            eventDescription =(TextView) itemView.findViewById(R.id.descriptionTextView);
+            eventDescription = (TextView) itemView.findViewById(R.id.descriptionTextView);
             eventAddedDate = (TextView) itemView.findViewById(R.id.addedDateTextView);
 
-            starredEvent = (Button)itemView.findViewById(R.id.starredEventBtn);
+            starredEvent = (Button) itemView.findViewById(R.id.starredEventBtn);
             starredEvent.setOnClickListener(this);
 
             deleteEvent = (Button) itemView.findViewById(R.id.deleteButton);
@@ -85,19 +85,19 @@ public class SculaEventAdapter extends RecyclerView.Adapter<SculaEventAdapter.Vi
                     // to proceed more action on it
                     // using the following block
                     /**
-                    Intent intent = new Intent(context , EventDetailsActivity.class);
-                    Bundle bundle = new Bundle();
-                    bundle.putSerializable("clickedEvent" , sculaEvent);
-                    intent.putExtras(bundle);
-                    */
+                     Intent intent = new Intent(context , EventDetailsActivity.class);
+                     Bundle bundle = new Bundle();
+                     bundle.putSerializable("clickedEvent" , sculaEvent);
+                     intent.putExtras(bundle);
+                     */
                 }
             });
         }
 
         @Override
         public void onClick(View v) {
-            switch (v.getId()){
-                case R.id.starredEventBtn :
+            switch (v.getId()) {
+                case R.id.starredEventBtn:
                     AddEventToFavorite(sculaEventList.get(getAdapterPosition()));
                     break;
                 case R.id.deleteButton:
@@ -109,7 +109,7 @@ public class SculaEventAdapter extends RecyclerView.Adapter<SculaEventAdapter.Vi
         private void DeleteEvent(final int eventID) {
 
             LayoutInflater layoutInflater = LayoutInflater.from(context);
-            View view = layoutInflater.inflate(R.layout.confirm_dialog , null);
+            View view = layoutInflater.inflate(R.layout.confirm_dialog, null);
 
             dialogBuilder = new AlertDialog.Builder(context);
             dialogBuilder.setView(view);
@@ -142,6 +142,7 @@ public class SculaEventAdapter extends RecyclerView.Adapter<SculaEventAdapter.Vi
                 }
             });
         }
+
         // add event to favorite
         private void AddEventToFavorite(SculaEvent sculaEvent) {
 

@@ -24,7 +24,7 @@ public class CustomNavigationHandler implements NavigationView.OnNavigationItemS
     private Context context;
     private DrawerLayout drawerLayout;
 
-    public CustomNavigationHandler(final Context context , View view , DrawerLayout drawerLayout) {
+    public CustomNavigationHandler(final Context context, View view, DrawerLayout drawerLayout) {
         this.view = view;
         this.context = context;
         this.drawerLayout = drawerLayout;
@@ -39,7 +39,7 @@ public class CustomNavigationHandler implements NavigationView.OnNavigationItemS
         // finding the notification icon of MenuItem inbox
         MenuItem item = upperNavigationView.getMenu().findItem(R.id.nav_inbox);
         View iconCounterLayout = (View) item.getActionView();
-        TextView iconCounter =(TextView) iconCounterLayout.findViewById(R.id.iconNotificationText);
+        TextView iconCounter = (TextView) iconCounterLayout.findViewById(R.id.iconNotificationText);
         // set event listener for the notification icon
         iconCounter.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,34 +57,44 @@ public class CustomNavigationHandler implements NavigationView.OnNavigationItemS
         // Handle footer Drawer items event
         // using View for referring to the footer of the DrawerLayout As it's a LinearLayout
         View v = (View) view.findViewById(R.id.footerLayout);
-        new DrawerItemEventListener().FooterItemEventListener(context , v);
+        new DrawerItemEventListener().FooterItemEventListener(context, v);
 
         // set radius for images
         ImageView circularImageView = (ImageView) upperNavigationView.getHeaderView(0).findViewById(R.id.userImageView);
-        Bitmap bitmap = BitmapFactory.decodeResource(context.getResources(),R.drawable.ic_menu_user);
-        Bitmap circularBitmap = ImageConverter.getRoundedImage(bitmap, 1000);
+        radiusImage(circularImageView , R.drawable.unnamed);
+        // for first sender
+        ImageView firstGist = (ImageView) upperNavigationView.getHeaderView(0).findViewById(R.id.firstSenderUserIcon);
+        // for second sender
+        ImageView secondGist = (ImageView) upperNavigationView.getHeaderView(0).findViewById(R.id.secondSenderUserIcon);
+
+    }
+
+    private void radiusImage(ImageView circularImageView, int drawableResID) {
+
+        Bitmap bitmap = BitmapFactory.decodeResource(context.getResources(), drawableResID);
+        Bitmap circularBitmap = ImageConverter.getRoundedImage(bitmap, 1500);
         circularImageView.setImageBitmap(circularBitmap);
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
-    public boolean onNavigationItemSelected (MenuItem item){
+    public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
         if (id == R.id.nav_home) {
             // navigate to MainActivity
-            context.startActivity(new Intent(context , MainActivity.class));
+            context.startActivity(new Intent(context, MainActivity.class));
             ((Activity) context).finish();
         } else if (id == R.id.nav_profile) {
             Toast.makeText(context, "Profile", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_events) {
             // navigate to MainActivity
-            context.startActivity(new Intent(context , EventListActivity.class));
+            context.startActivity(new Intent(context, EventListActivity.class));
             ((Activity) context).finish();
         } else if (id == R.id.nav_favorites) {
             Toast.makeText(context, "Favorites", Toast.LENGTH_SHORT).show();
-        }else if (id == R.id.nav_inbox) {
+        } else if (id == R.id.nav_inbox) {
             Toast.makeText(context, "Inbox", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_contact_us) {
             Toast.makeText(context, "Contact us", Toast.LENGTH_SHORT).show();

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     style="?attr/actionButtonStyle"
-    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="60dp"
     android:layout_height="60dp"
     android:clipToPadding="false"
@@ -11,8 +10,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:src="@android:drawable/ic_popup_reminder"
-        android:contentDescription="icon" />
+        android:contentDescription="icon"
+        android:src="@android:drawable/ic_popup_reminder" />
 
     <TextView
         android:id="@+id/counterActionBadge"
@@ -21,12 +20,12 @@
         android:layout_gravity="end|top"
         android:layout_marginEnd="-8dp"
         android:layout_marginTop="8dp"
-        android:gravity="center"
-        android:padding="2dp"
         android:background="@android:drawable/ic_notification_overlay"
         android:backgroundTint="@android:color/holo_orange_light"
-        android:textColor="@android:color/white"
+        android:gravity="center"
+        android:padding="2dp"
         android:text="12"
-        android:textSize="10sp"/>
+        android:textColor="@android:color/white"
+        android:textSize="10sp" />
 
 </FrameLayout>

@@ -13,6 +13,6 @@
         android:layout_height="match_parent" />
 
 
-    <include layout="@layout/navigation_list"/>
+    <include layout="@layout/navigation_list" />
 
 </android.support.v4.widget.DrawerLayout>
