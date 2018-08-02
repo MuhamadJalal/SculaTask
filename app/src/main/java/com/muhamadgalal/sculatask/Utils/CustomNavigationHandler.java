@@ -11,7 +11,6 @@ import android.support.v4.widget.DrawerLayout;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -99,4 +98,3 @@ public class CustomNavigationHandler implements NavigationView.OnNavigationItemS
         return true;
     }
 }
-

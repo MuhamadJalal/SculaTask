@@ -41,10 +41,9 @@
             android:id="@+id/userNameID"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_above="@+id/testNotExistMsg"
             android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginStart="100dp"
             android:text="@string/user_name"
             android:textSize="24sp" />
 
