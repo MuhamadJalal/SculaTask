@@ -65,7 +65,7 @@ public class EventListActivity extends AppCompatActivity {
         eventList = new ArrayList<>();
         getEventListDB = new ArrayList<>();
 
-        getEventListDB = databaseHandler.getSculEventsList();
+        getEventListDB = databaseHandler.getSculaEventsList();
         for (SculaEvent se : getEventListDB) {
 
             SculaEvent event = new SculaEvent();

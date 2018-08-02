@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import com.muhamadgalal.sculatask.Model.SculaEvent;
 
@@ -12,6 +13,9 @@ import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
+
+import static com.muhamadgalal.sculatask.Data.Constants.TABLE_NAME;
 
 public class DatabaseHandler extends SQLiteOpenHelper {
     private Context context;
@@ -23,7 +27,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         // create DB table
-        String CREATE_TABLE = ("CREATE TABLE " + Constants.TABLE_NAME + "(" + Constants.KEY_ID + " INTEGER PRIMARY KEY, " +
+        String CREATE_TABLE = ("CREATE TABLE " + TABLE_NAME + "(" + Constants.KEY_ID + " INTEGER PRIMARY KEY, " +
                 Constants.KEY_TITLE + " TEXT, " + Constants.KEY_DESCRIPTION + " TEXT, " + Constants.KEY_DATE + " LONG);");
 
         db.execSQL(CREATE_TABLE);
@@ -32,7 +36,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE IF EXISTS " + Constants.TABLE_NAME);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
         onCreate(db);
     }
 
@@ -49,20 +53,20 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         contentValues.put(Constants.KEY_DESCRIPTION , event.getDescription());
         contentValues.put(Constants.KEY_DATE , event.getEventAddedDate());
 
-        database.insert(Constants.TABLE_NAME , null , contentValues);
+        database.insert(TABLE_NAME , null , contentValues);
     }
 
     // delete event from DB
     public void DeleteEvent(int id){
 
         SQLiteDatabase database = this.getWritableDatabase();
-        database.delete(Constants.TABLE_NAME , Constants.KEY_ID +"=?" , new String[]{String.valueOf(id)});
+        database.delete(TABLE_NAME , Constants.KEY_ID +"=?" , new String[]{String.valueOf(id)});
         database.close();
     }
 
     // get events count
     public int getSculaEventsCount(){
-        Cursor cursor = this.getReadableDatabase().rawQuery("SELECT * FROM " + Constants.TABLE_NAME , null);
+        Cursor cursor = this.getReadableDatabase().rawQuery("SELECT * FROM " + TABLE_NAME , null);
         int count = cursor.getCount();
         cursor.close();
         return count;
@@ -72,7 +76,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     public SculaEvent getSculaEvent(int id){
         SQLiteDatabase database = this.getReadableDatabase();
 
-        Cursor cursor = database.query(Constants.TABLE_NAME , new String[]{Constants.KEY_ID , Constants.KEY_TITLE , Constants.KEY_DESCRIPTION , Constants.KEY_DATE}
+        Cursor cursor = database.query(TABLE_NAME , new String[]{Constants.KEY_ID , Constants.KEY_TITLE , Constants.KEY_DESCRIPTION , Constants.KEY_DATE}
         ,Constants.KEY_ID+"=?" , new String[]{String.valueOf(id)}, null , null , null , null);
 
         if (cursor != null)
@@ -95,13 +99,13 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     }
 
     // get all events
-    public List<SculaEvent> getSculEventsList(){
+    public List<SculaEvent> getSculaEventsList(){
 
         List<SculaEvent> sculaEventList = new ArrayList<>();
 
         SQLiteDatabase database = this.getReadableDatabase();
 
-        Cursor cursor = database.query(Constants.TABLE_NAME ,new String[]{Constants.KEY_ID , Constants.KEY_TITLE , Constants.KEY_DESCRIPTION , Constants.KEY_DATE}
+        Cursor cursor = database.query(TABLE_NAME ,new String[]{Constants.KEY_ID , Constants.KEY_TITLE , Constants.KEY_DESCRIPTION , Constants.KEY_DATE}
         , null , null , null , null , Constants.KEY_DATE + " DESC");
 
         if (cursor.moveToFirst()){
@@ -112,7 +116,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 event.setTitle(cursor.getString(cursor.getColumnIndex(Constants.KEY_TITLE)));
                 event.setDescription(cursor.getString(cursor.getColumnIndex(Constants.KEY_DESCRIPTION)));
                 // re-format date
-                event.setEventAddedDate(DateFormat.getInstance().format(new Date(cursor.getLong(cursor.getColumnIndex(Constants.KEY_DATE))).getTime()));
+                String currentDateTimeString = DateFormat.getDateInstance().format(new Date());
+                event.setEventAddedDate(currentDateTimeString);
 
                 sculaEventList.add(event);
             }while (cursor.moveToNext());
@@ -131,6 +136,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         values.put(Constants.KEY_DESCRIPTION , event.getDescription());
         values.put(Constants.KEY_DATE , event.getEventAddedDate());
 
-        return database.update(Constants.TABLE_NAME , values , Constants.KEY_ID + "=?" , new String[]{String.valueOf(event.getEventID())});
+        return database.update(TABLE_NAME , values , Constants.KEY_ID + "=?" , new String[]{String.valueOf(event.getEventID())});
     }
 }
