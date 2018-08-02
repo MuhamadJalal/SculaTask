@@ -12,7 +12,7 @@
         android:background="@color/basicAppColor"
         android:clickable="false"
         android:fontFamily="monospace"
-        android:padding="8dp"
+        android:padding="6dp"
         android:text="@string/menu_dashboard"
         android:textColor="@android:color/white"
         android:textSize="20sp" />

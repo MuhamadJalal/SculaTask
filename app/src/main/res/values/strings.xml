@@ -31,7 +31,7 @@
     <string name="event_description">Event Description</string>
     <string name="added_date">Added Date</string>
     <string name="save_event">Save Event!</string>
-    <string name="preview">Prototype version performing task on Sidebar. \n
+    <string name="preview">Prototype version implements NavigationView perform task on Sidebar. \n
         which showing a Toast in most of its event listener. \n It was a good challenge for me, \n
         THANKS! \n
         Please click EVENTS Button below to show Event List if it exist! \n
