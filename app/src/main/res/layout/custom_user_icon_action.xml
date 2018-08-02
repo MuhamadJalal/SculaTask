@@ -14,7 +14,6 @@
         android:src="@drawable/ic_menu_user"/>
 
     <TextView
-        android:id="@+id/pluSignBadge"
         android:layout_width="25dp"
         android:layout_height="25dp"
         style="@android:style/Widget.Holo.Light.MediaRouteButton"
